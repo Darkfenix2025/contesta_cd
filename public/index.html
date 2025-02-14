@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contestador de Cartas Documento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contestador de Cartas Documento</h1>
+
+        <div class="input-section">
+            <label for="modoEntrada">Seleccione el modo de entrada:</label>
+            <select id="modoEntrada">
+                <option value="manual">Entrada Manual</option>
+                <option value="archivo">Subir Archivo</option>
+            </select>
+
+            <div id="entradaManual">
+                <label for="texto">Ingrese la Carta Documento:</label>
+                <textarea id="texto" rows="10" placeholder="Pegue aquí el texto de la carta documento..."></textarea>
+            </div>
+
+            <div id="entradaArchivo" style="display: none;">
+                <label for="archivo">Subir Carta Documento (PDF, DOCX, TXT):</label>
+                <input type="file" id="archivo" accept=".pdf,.docx,.txt">
+            </div>
+             <button id="procesar">Generar Respuesta</button>
+        </div>
+       
+
+        <div class="output-section">
+            <h2>Respuesta Generada:</h2>
+            <textarea id="respuesta" rows="10" placeholder="La respuesta generada aparecerá aquí..."></textarea>
+            <div class="botones-descarga">
+                <button id="guardar-docx">Guardar como DOCX</button>
+                <button id="guardar-txt">Guardar como TXT</button>
+                <button id="guardar-pdf">Guardar como PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/8.5.0/docx.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
