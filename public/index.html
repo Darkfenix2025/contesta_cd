@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contestador de Cartas Documento</title>
+    <title>Contestador de Cartas Documento y Analizador de Contratos</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Contestador de Cartas Documento</h1>
+        <h1>Contestador de Cartas Documento y Analizador de Contratos</h1>
 
         <div class="input-section">
             <label for="modoEntrada">Seleccione el modo de entrada:</label>
@@ -18,27 +18,46 @@
             </select>
 
             <div id="entradaManual">
-                <label for="texto">Ingrese la Carta Documento:</label>
-                <textarea id="texto" rows="10" placeholder="Pegue aquí el texto de la carta documento..."></textarea>
+                <label for="texto">Ingrese la Carta Documento o Contrato:</label>
+                <textarea id="texto" rows="10" placeholder="Pegue aquí el texto..."></textarea>
             </div>
 
             <div id="entradaArchivo" style="display: none;">
-                <label for="archivo">Subir Carta Documento (PDF, DOCX, TXT):</label>
+                <label for="archivo">Subir Archivo (PDF, DOCX, TXT):</label>
                 <input type="file" id="archivo" accept=".pdf,.docx,.txt">
+                 <!-- Previsualización del archivo -->
+                <div id="previsualizacionArchivo"></div>
             </div>
-             <button id="procesar">Generar Respuesta</button>
+
+            <button id="procesarCarta">Generar Respuesta (Carta Documento)</button>
+            <button id="analizarContrato">Analizar Contrato</button>
+
+            <!-- Indicador de carga -->
+            <div id="indicadorCarga" style="display: none;">
+                <img src="assets/loading.gif" alt="Cargando...">  <!-- Reemplaza 'loading.gif' con tu imagen -->
+            </div>
         </div>
-       
 
         <div class="output-section">
-            <h2>Respuesta Generada:</h2>
-            <textarea id="respuesta" rows="10" placeholder="La respuesta generada aparecerá aquí..."></textarea>
+            <h2>Respuesta de Carta Documento:</h2>
+            <textarea id="respuestaCarta" rows="10" placeholder="La respuesta generada aparecerá aquí..."></textarea>
             <div class="botones-descarga">
                 <button id="guardar-docx">Guardar como DOCX</button>
                 <button id="guardar-txt">Guardar como TXT</button>
                 <button id="guardar-pdf">Guardar como PDF</button>
             </div>
         </div>
+
+        <div class="output-section">
+            <h2>Análisis del Contrato:</h2>
+            <textarea id="analisisContrato" rows="10" placeholder="El análisis del contrato aparecerá aquí..."></textarea>
+            <div class="botones-descarga">
+                <button id="guardar-analisis-docx">Guardar Análisis como DOCX</button>
+                <button id="guardar-analisis-txt">Guardar Análisis como TXT</button>
+                <button id="guardar-analisis-pdf">Guardar Análisis como PDF</button>
+            </div>
+        </div>
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>

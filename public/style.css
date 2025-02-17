@@ -1,3 +1,5 @@
+/* Estilos existentes */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -71,4 +73,34 @@ button:hover {
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+/* Estilos adicionales (si los necesitas) */
+.output-section {
+    margin-bottom: 30px; /* Más espacio entre secciones */
+}
+
+.output-section h2 {
+    border-bottom: 1px solid #ddd; /* Separador visual */
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* ... (tus estilos existentes) ... */
+
+#indicadorCarga {
+    text-align: center; /* Centra la imagen */
+    margin-top: 10px;
+}
+
+#indicadorCarga img {
+    width: 50px; /* Ajusta el tamaño según tu imagen */
+    height: 50px;
+}
+#previsualizacionArchivo{
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+
 }
