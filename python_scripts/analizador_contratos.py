@@ -37,7 +37,33 @@ def analizar_contrato(contrato_texto):
         )
 
         prompt_analisis = f"""
-        Actúa como un abogado profesional altamente experimentado de Argentina... (El resto de tu prompt) ...
+        Actúa como un abogado profesional altamente experimentado de Argentina, con especialización en derecho contractual argentino. Tu tarea es analizar el siguiente contrato desde una perspectiva legal argentina.
+
+        Por favor, realiza las siguientes acciones en tu análisis:
+
+        1. **Resumen Ejecutivo:** Proporciona un resumen conciso del contrato, identificando las partes involucradas, el objeto del contrato y la finalidad principal del mismo.
+
+        2. **Identificación de Cláusulas Clave:** Señala y explica las cláusulas más importantes y relevantes del contrato bajo la ley argentina.  Presta especial atención a cláusulas relacionadas con:
+            * Objeto y alcance del contrato.
+            * Precio, forma de pago y condiciones financieras.
+            * Plazos y condiciones de cumplimiento.
+            * Garantías y responsabilidades.
+            * Confidencialidad.
+            * Propiedad intelectual (si aplica).
+            * Causales de rescisión y resolución del contrato.
+            * Ley aplicable y jurisdicción competente (especificando si es ley argentina y tribunales argentinos, si corresponde).
+            * Cláusulas penales o indemnizaciones.
+
+        3. **Análisis de Riesgos y Puntos de Atención (Perspectiva Legal Argentina):**  Desde la perspectiva de un abogado argentino, identifica y explica cualquier posible riesgo legal, ambigüedad, o punto de atención que las partes deberían considerar cuidadosamente bajo la legislación argentina.  Señala cláusulas que podrían ser:
+            * Desfavorables para alguna de las partes.
+            * Poco claras o ambiguas según la interpretación de la ley argentina.
+            * Potencialmente nulas o cuestionables bajo el Código Civil y Comercial de la Nación Argentina u otras leyes aplicables.
+            * Que requieran mayor claridad o especificidad para evitar disputas futuras en Argentina.
+
+        4. **Recomendaciones (Opcional, si es posible para el modelo):** Si es posible y pertinente, ofrece recomendaciones generales y concisas sobre cómo se podría mejorar el contrato desde un punto de vista legal argentino para proteger mejor los intereses de las partes o aclarar puntos ambiguos.
+
+        **Formato de Salida:**  Presenta el análisis de forma clara y organizada, utilizando títulos y viñetas para facilitar la lectura.  Utiliza terminología legal precisa y apropiada para el derecho contractual argentino.
+
         **Contrato a analizar:**
         {contrato_texto}
         """
