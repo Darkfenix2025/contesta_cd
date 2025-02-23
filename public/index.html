@@ -10,53 +10,90 @@
     <div class="container">
         <h1>Contestador de Cartas Documento y Analizador de Contratos</h1>
 
-        <div class="input-section">
-            <label for="modoEntrada">Seleccione el modo de entrada:</label>
-            <select id="modoEntrada">
-                <option value="manual">Entrada Manual</option>
-                <option value="archivo">Subir Archivo</option>
-            </select>
-
-            <div id="entradaManual">
-                <label for="texto">Ingrese la Carta Documento o Contrato:</label>
-                <textarea id="texto" rows="10" placeholder="Pegue aquí el texto..."></textarea>
-            </div>
-
-            <div id="entradaArchivo" style="display: none;">
-                <label for="archivo">Subir Archivo (PDF, DOCX, TXT):</label>
-                <input type="file" id="archivo" accept=".pdf,.docx,.txt">
-                 <!-- Previsualización del archivo -->
-                <div id="previsualizacionArchivo"></div>
-            </div>
-
-            <button id="procesarCarta">Generar Respuesta (Carta Documento)</button>
-            <button id="analizarContrato">Analizar Contrato</button>
-
-            <!-- Indicador de carga -->
-            <div id="indicadorCarga" style="display: none;">
-                <img src="assets/loading.gif" alt="Cargando...">  <!-- Reemplaza 'loading.gif' con tu imagen -->
-            </div>
+        <!-- Botones Principales -->
+        <div class="botones-principales">
+            <button id="btnCartasDocumento">Cartas Documento</button>
+            <button id="btnContratos">Contratos</button>
         </div>
 
-        <div class="output-section">
-            <h2>Respuesta de Carta Documento:</h2>
-            <textarea id="respuestaCarta" rows="10" placeholder="La respuesta generada aparecerá aquí..."></textarea>
-            <div class="botones-descarga">
-                <button id="guardar-docx">Guardar como DOCX</button>
-                <button id="guardar-txt">Guardar como TXT</button>
-                <button id="guardar-pdf">Guardar como PDF</button>
-            </div>
-        </div>
+        <!-- Sección Cartas Documento (Inicialmente Oculta) -->
+        <div id="seccionCartasDocumento" style="display: none;" class="seccion-principal">
 
-        <div class="output-section">
-            <h2>Análisis del Contrato:</h2>
-            <textarea id="analisisContrato" rows="10" placeholder="El análisis del contrato aparecerá aquí..."></textarea>
-            <div class="botones-descarga">
-                <button id="guardar-analisis-docx">Guardar Análisis como DOCX</button>
-                <button id="guardar-analisis-txt">Guardar Análisis como TXT</button>
-                <button id="guardar-analisis-pdf">Guardar Análisis como PDF</button>
+            <div class="input-section">
+                <label for="modoEntradaCD">Seleccione el modo de entrada:</label>
+                <select id="modoEntradaCD">
+                    <option value="manual">Entrada Manual</option>
+                    <option value="archivo">Subir Archivo</option>
+                </select>
+
+                <div id="entradaManualCD">
+                    <label for="textoCD">Ingrese la Carta Documento:</label>
+                    <textarea id="textoCD" rows="10" placeholder="Pegue aquí el texto..."></textarea>
+                </div>
+
+                <div id="entradaArchivoCD" style="display: none;">
+                    <label for="archivoCD">Subir Archivo (PDF, DOCX, TXT):</label>
+                    <input type="file" id="archivoCD" accept=".pdf,.docx,.txt">
+                    <div id="previsualizacionArchivoCD"></div>
+                </div>
+
+                <button id="procesarCarta">Generar Respuesta</button>
+
+                <!-- Indicador de carga -->
+                <div id="indicadorCargaCD" style="display: none;">
+                    <img src="assets/loading.gif" alt="Cargando...">
+                </div>
             </div>
-        </div>
+
+            <div class="output-section">
+                <h2>Respuesta de Carta Documento:</h2>
+                <textarea id="respuestaCarta" rows="10" placeholder="La respuesta generada aparecerá aquí..."></textarea>
+                <div class="botones-descarga">
+                    <button id="guardar-docx">Guardar como DOCX</button>
+                    <button id="guardar-txt">Guardar como TXT</button>
+                    <button id="guardar-pdf">Guardar como PDF</button>
+                </div>
+            </div>
+        </div> <!-- Fin Sección Cartas Documento -->
+
+        <!-- Sección Contratos (Inicialmente Oculta) -->
+        <div id="seccionContratos" style="display: none;" class="seccion-principal">
+
+            <div class="input-section">
+                <label for="modoEntradaContrato">Seleccione el modo de entrada:</label>
+                <select id="modoEntradaContrato">
+                    <option value="manual">Entrada Manual</option>
+                    <option value="archivo">Subir Archivo</option>
+                </select>
+
+                <div id="entradaManualContrato">
+                    <label for="textoContrato">Ingrese el Contrato:</label>
+                    <textarea id="textoContrato" rows="10" placeholder="Pegue aquí el texto..."></textarea>
+                </div>
+
+                <div id="entradaArchivoContrato" style="display: none;">
+                    <label for="archivoContrato">Subir Archivo (PDF, DOCX, TXT):</label>
+                    <input type="file" id="archivoContrato" accept=".pdf,.docx,.txt">
+                    <div id="previsualizacionArchivoContrato"></div>
+                </div>
+
+                <button id="analizarContrato">Analizar Contrato</button>
+                <!-- Indicador de carga -->
+                <div id="indicadorCargaContrato" style="display: none;">
+                  <img src="assets/loading.gif" alt="Cargando...">  <!-- Reemplaza 'loading.gif' con tu imagen -->
+                </div>
+            </div>
+
+            <div class="output-section">
+                <h2>Análisis del Contrato:</h2>
+                <textarea id="analisisContrato" rows="10" placeholder="El análisis del contrato aparecerá aquí..."></textarea>
+                <div class="botones-descarga">
+                    <button id="guardar-analisis-docx">Guardar Análisis como DOCX</button>
+                    <button id="guardar-analisis-txt">Guardar Análisis como TXT</button>
+                    <button id="guardar-analisis-pdf">Guardar Análisis como PDF</button>
+                </div>
+            </div>
+        </div> <!-- Fin Sección Contratos -->
 
     </div>
 

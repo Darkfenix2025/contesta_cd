@@ -104,3 +104,16 @@ button:hover {
     border-radius: 4px;
 
 }
+
+/* ... (tus estilos existentes) ... */
+
+.botones-principales {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.botones-principales button {
+    margin: 0 10px; /* Espacio entre los botones */
+    padding: 12px 20px; /* Más padding */
+    font-size: 16px;
+}
